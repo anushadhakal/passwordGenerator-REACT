@@ -11,6 +11,7 @@ function App() {
   let [symbol, setSymbol] = useState (false)
   let [password, setPassword] = useState (10)
   let [mainstate, setMainState] = useState ()
+  let [copied, setCopied] = useState (false)
 
   let storeValue = ''
   let finalValue = ''
@@ -42,7 +43,11 @@ function App() {
   }
   let copyPw = ()=>{
     navigator.clipboard.writeText(mainstate)
-  }
+   setCopied(true)
+   setTimeout(()=>{
+     setCopied(false)
+   }, 2000)}
+
   
 
   return (
@@ -52,7 +57,7 @@ function App() {
       </div>
       <br />
       <div className='inputField' >
-        <input type="text" value = {mainstate} readOnly/> <button onClick = {copyPw}>Copy</button>
+        <input type="text" value = {mainstate} readOnly/> <button onClick = {copyPw}>{copied ? 'copied' : 'copy' }</button>
       </div>
       <div className='passLen'>
         <label> Password Length :</label>
