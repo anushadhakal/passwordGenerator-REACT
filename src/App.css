@@ -1,0 +1,108 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Input Field */
+.inputField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"], input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff7eb3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #ff4f81;
+  transform: scale(1.1);
+}
+
+/* Checkbox and labels */
+label {
+  color: white;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #ff7eb3;
+  margin-left: 5px;
+}
+
+/* Layout */
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.passLen, .upperCase, .lowerCase, .inclnum, .inclSym {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button animations */
+.btn {
+  margin-top: 15px;
+}
+
+.btn button {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
